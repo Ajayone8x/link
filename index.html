@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Astro Live - JW Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" type="image/png">
+  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+    }
+
+    #player {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .telegram-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1c1c1c;
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 50px 10px orange;
+      z-index: 9999;
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    .telegram-popup h2 {
+      margin-top: 0;
+      color: orange;
+    }
+
+    .telegram-popup p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .telegram-popup button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .telegram-popup .join {
+      background-color: orange;
+      color: black;
+      font-weight: bold;
+    }
+
+    .telegram-popup .joined {
+      background-color: #333;
+      color: white;
+    }
+
+    @media (max-width: 480px) {
+      .telegram-popup {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- JW Player Container -->
+  <div id="player"></div>
+
+  <!-- Telegram Popup -->
+  <div class="telegram-popup" id="telegramPopup">
+    <h2>Support Us!</h2>
+    <p>Join our Telegram channel <strong>@one8chirag</strong> for instant updates, highlights, and exclusive links.</p>
+    <a href="https://t.me/+199H69Pqbd82MmM9" target="_blank"><button class="join">Join Now</button></a>
+    <button class="joined" onclick="document.getElementById('telegramPopup').style.display='none';">Already Joined</button>
+  </div>
+
+  <script>
+    jwplayer("player").setup({
+      file: "https://live.dinesh29.com.np/stream/livetv/starsports1hdhindi/master.m3u8", // replace with your .m3u8
+      image: "https://www.disneystar.com/media/2231/7e25132017-009.jpg?width=1920&height=1080&mode=max&slimmage=true",
+      autostart: true,
+      mute: true,
+      width: "100%",
+      height: "100%",
+      controls: true,
+      stretching: "uniform",
+      aspectratio: "16:9",
+      playbackRateControls: true
+    });
+  </script>
+
+</body>
+
+</html>
